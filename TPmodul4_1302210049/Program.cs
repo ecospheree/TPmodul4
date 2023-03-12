@@ -8,7 +8,33 @@
     }
 }
 
+public class DoorMachine
+{
+    enum state { PintuTerkunci, PintuTerbuka };
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Kelurahan " + KodePos.Kelurahan.Samoja + " KodePos " + KodePos.getKodePos(KodePos.Kelurahan.Samoja));
+        Console.WriteLine("Kode Perintah : Kunci_Pintunya, Buka_Pintunya");
 
+        state KondisiPintu = state.PintuTerkunci;
+        string Perintah = "Kunci_Pintunya";
+
+        while (Perintah == "Kunci_Pintunya" || Perintah == "Buka_Pintunya")
+        {
+            Console.WriteLine(KondisiPintu);
+            Console.Write("Masukkan Perintah : ");
+            Perintah = Console.ReadLine();
+            if (Perintah == "Buka_Pintunya")
+            {
+                KondisiPintu = state.PintuTerbuka;
+            }
+            else if (Perintah == "Kunci_Pintunya")
+            {
+                KondisiPintu = state.PintuTerkunci;
+            }
+        }
+    }
+}
 
 
 
